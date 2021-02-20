@@ -1,15 +1,17 @@
 import { Request, Response } from 'express'
 import { validationResult } from 'express-validator'
+import { RequestValidationError } from '../../models/errors/RequestValidationError'
+import { DatabaseConnectionError } from '../../models/errors/DatabaseConnectionError'
+
 const signUpController = () => {
   const signUp = async (req: Request, res: Response) => {
     const errors = validationResult(req)
 
     if (!errors.isEmpty()) {
-      return res.status(400).send(errors.array())
+      throw new RequestValidationError(errors.array())
     }
 
-    const { email, password } = req.body
-    console.log('Creating a user...')
+    throw new DatabaseConnectionError()
 
     res.send({})
   }
