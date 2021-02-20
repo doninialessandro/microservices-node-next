@@ -1,13 +1,13 @@
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-const usersController = () => {
-  const getCurrentUser = async (
+const signInController = () => {
+  const signIn = async (
     req: unknown,
     res: { send: (arg0: string) => void }
   ) => {
-    res.send('Hi There')
+    res.send('Sign In')
   }
 
-  return { getCurrentUser }
+  return { signIn }
 }
 
-export default usersController
+export default signInController
