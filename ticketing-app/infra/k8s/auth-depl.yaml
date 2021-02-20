@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: tiecketing-app/auth
+          image: ticketing-app/auth
           env:
             - name: PORT
               value: "3000"
