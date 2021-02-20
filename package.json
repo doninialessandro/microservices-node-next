@@ -1,0 +1,17 @@
+{
+  "name": "microservices-node-react",
+  "version": "0.1.0",
+  "description": "Microservices app using Node, NATS and React UI to interact with",
+  "private": true,
+  "scripts": {
+    "commit": "git-cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "commitizen": "^4.2.3"
+  }
+}
