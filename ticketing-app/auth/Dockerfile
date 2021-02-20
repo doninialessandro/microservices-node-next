@@ -1,8 +1,7 @@
-FROM node:alpine
+FROM node:15.9.0-alpine3.10 
 
 # create app directory
 RUN mkdir -p /app && chown -R node:node /app
-
 # set working directory
 WORKDIR /app
 

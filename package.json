@@ -4,6 +4,7 @@
   "description": "Microservices app using Node, NATS and React UI to interact with",
   "private": true,
   "scripts": {
+    "start-app": "cd ticketing-app && skaffold dev --no-prune=false --cache-artifacts=false",
     "commit": "git-cz"
   },
   "config": {
