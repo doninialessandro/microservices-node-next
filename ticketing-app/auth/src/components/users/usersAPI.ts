@@ -3,6 +3,6 @@ import usersController from './usersController'
 
 const router = Router()
 
-router.get('/current-user', usersController().getCurrentUser)
+router.get('/currentuser', usersController().getCurrentUser)
 
 export default router
