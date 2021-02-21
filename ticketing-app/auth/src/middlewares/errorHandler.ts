@@ -13,7 +13,7 @@ export default (app: Express): void => {
     }
 
     res.status(400).send({
-      errors: [{ message: 'Something went wrong' }]
+      errors: [{ message: '😩 Oops... Something went wrong' }]
     })
   }
 
