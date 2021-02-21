@@ -1,9 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+import { Request, Response } from 'express'
 const currentUserController = () => {
-  const getCurrentUser = async (
-    req: unknown,
-    res: { send: (arg0: string) => void }
-  ) => {
+  const getCurrentUser = async (req: Request, res: Response) => {
     res.send('Hi There')
   }
 
