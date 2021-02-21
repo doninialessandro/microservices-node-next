@@ -9,7 +9,7 @@ This is a microservices application based on Node, NATS as event bus and  and Ne
 1. Ensure you have Kubernetes installed: [https://kubernetes.io](https://kubernetes.io)
 2. Ensure you have Skaffold installed: [https://skaffold.dev](https://skaffold.dev)
 3. Ensure you have NGINX Ingress Controller up and running: [https://kubernetes.github.io/ingress-nginx/deploy](https://kubernetes.github.io/ingress-nginx/deploy)
-4. Add the following new entry in your hosts file: **127.0.0.1 ticketing.dev**
+4. Add the following new entry in your host file: **127.0.0.1 ticketing.dev**
 (you can find the host file at *etc/hosts* for MacOS or Linux and *C:\Windows\System32\Dirvers\etc\hosts* for Windows)
 
 ## Run with Kubernetes (development)

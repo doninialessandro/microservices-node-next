@@ -7,7 +7,10 @@ import errorHandler from './middlewares/errorHandler'
 
 const app = express()
 const port = process.env.PORT || '5000'
+const dbHost = process.env.DB_HOST || 'auth-mongo-srv'
+const dbPort = process.env.DB_PORT || '27017'
+const dbName = process.env.DB_NAME || 'auth'
 
 routes(app)
 errorHandler(app)
-connection(app, port)
+connection(app, port, dbHost, dbPort, dbName)

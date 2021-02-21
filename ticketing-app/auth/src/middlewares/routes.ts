@@ -1,6 +1,6 @@
 import { Express } from 'express'
 import { json } from 'body-parser'
-import { currentUser, signIn, signOut, signUp } from '../components'
+import { currentUser, signIn, signOut, signUp } from '../routes'
 import { NotFoundError } from '../models/errors/NotFoundError'
 
 export default (app: Express): void => {

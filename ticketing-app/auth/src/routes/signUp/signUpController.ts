@@ -1,7 +1,10 @@
 import { Request, Response } from 'express'
 import { validationResult } from 'express-validator'
+
+import { User } from '../../models/user/User'
+
 import { RequestValidationError } from '../../models/errors/RequestValidationError'
-import { DatabaseConnectionError } from '../../models/errors/DatabaseConnectionError'
+import { BadRequestError } from '../../models/errors/BadRequestError'
 
 const signUpController = () => {
   const signUp = async (req: Request, res: Response) => {
@@ -11,11 +14,21 @@ const signUpController = () => {
       throw new RequestValidationError(errors.array())
     }
 
-    throw new DatabaseConnectionError()
+    const { email, password } = req.body
 
-    res.send({})
+    const existingUser = await User.findOne({ email })
+
+    if (existingUser) {
+      throw new BadRequestError(
+        '😩 Sorry, the email provided is already in use'
+      )
+    }
+
+    const user = User.build({ email, password })
+    await user.save()
+
+    res.status(201).send(user)
   }
-
   return { signUp }
 }
 
