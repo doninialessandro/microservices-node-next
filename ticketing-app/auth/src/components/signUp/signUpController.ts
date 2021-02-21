@@ -32,7 +32,7 @@ const signUpController = () => {
       jwt: userJwt
     }
 
-    console.log(`🥳 User ${user.email} created!!!`)
+    console.log(`🥳 Welcome ${user.email}!!!`)
     res.status(201).send(user)
   }
   return { signUp }

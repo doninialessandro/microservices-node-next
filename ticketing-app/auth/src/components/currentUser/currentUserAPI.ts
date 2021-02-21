@@ -1,7 +1,9 @@
-import { Router } from 'express'
-import currentUserController from './currentUserController'
+import { Router, Request, Response } from 'express'
+import { currentUser } from './currentUser'
 
 const router = Router()
-router.get('/currentuser', currentUserController().getCurrentUser)
+router.get('/currentuser', currentUser, (req: Request, res: Response) => {
+  res.send({ currentUser: req.currentUser || null })
+})
 
 export default router

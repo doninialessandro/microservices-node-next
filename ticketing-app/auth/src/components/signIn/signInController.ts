@@ -33,7 +33,7 @@ const signInController = () => {
       jwt: userJwt
     }
 
-    console.log(`🥳 User ${existingUser.email} logged in!!!`)
+    console.log(`🥳 Welcome back ${existingUser.email}!!!`)
     res.status(200).send(existingUser)
   }
 
