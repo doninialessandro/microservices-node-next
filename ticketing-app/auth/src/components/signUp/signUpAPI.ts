@@ -3,7 +3,6 @@ import { body } from 'express-validator'
 import signUpController from './signUpController'
 
 const router = Router()
-
 router.post(
   '/signup',
   [

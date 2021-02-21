@@ -6,8 +6,13 @@ export default async (
   port: string,
   dbHost: string,
   dbPort: string,
-  dbName: string
+  dbName: string,
+  jwtToken: string | undefined
 ): Promise<void> => {
+  if (!jwtToken) {
+    throw new Error('🔐 JWT_KEY must be defined')
+  }
+
   try {
     await mongoose.connect(`mongodb://${dbHost}:${dbPort}/${dbName}`, {
       useNewUrlParser: true,
