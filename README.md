@@ -18,5 +18,5 @@ This is a microservices application based on Node, NATS as event bus and  and Ne
 npm run start-app
 ```
 The service will be available at [https://ticketing.dev](https://ticketing.dev/)
-> :warning: **You connection is not private**, if you fin this message
-> click inseide the windows and write **thisisunsafe**.
+> :warning: **Your connection is not private**, if you find this message
+> click inside the window and write **thisisunsafe**.
