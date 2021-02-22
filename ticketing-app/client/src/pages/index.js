@@ -6,7 +6,7 @@ const Index = props => {
   return (
     <Hero
       title="Welcome !!!"
-      subtitle={`Hi ${currentUser.email}! you are in the right place to find to the event of your dreams`}
+      subtitle={`Hi ${currentUser?.email}! you are in the right place to find to the event of your dreams`}
       ctaText="Source code"
       ctaLink=""
       image="/images/party.svg"
@@ -15,8 +15,8 @@ const Index = props => {
   )
 }
 
-Index.getInitialProps = async ({ req }) => {
-  const API = axiosClient(req)
+Index.getInitialProps = async context => {
+  const API = axiosClient(context)
   const { data } = await API.get('/users/currentuser')
 
   return data

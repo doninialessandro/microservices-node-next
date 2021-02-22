@@ -5,7 +5,7 @@ const axiosClient = req => {
   if (typeof window === 'undefined') {
     return axios.create({
       baseURL:
-        'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local/api/',
+        'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local/api',
       headers: req.headers,
     })
   }
