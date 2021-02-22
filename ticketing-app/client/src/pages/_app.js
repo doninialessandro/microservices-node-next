@@ -1,7 +1,7 @@
 import { ChakraProvider, ColorModeProvider } from '@chakra-ui/react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
-import { Container, Main } from '../components'
+import { Container, Main, Header } from '../components'
 
 import theme from '../styles/theme'
 
@@ -17,6 +17,7 @@ const TicketingApp = ({ Component, pageProps }) => (
       <QueryClientProvider client={queryClient}>
         <Container>
           <Main>
+            <Header />
             <Component {...pageProps} />
           </Main>
         </Container>

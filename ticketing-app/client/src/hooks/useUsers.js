@@ -1,18 +1,17 @@
+import Router from 'next/router'
+
 import { useQuery, useMutation } from 'react-query'
 import { useToast } from '@chakra-ui/react'
-import API from '../utils/api'
-
-const getCurrentUser = async () => {
-  const { data } = await API.get('/users/currentuser')
-  return data
-}
+import axiosClient from '../utils/api'
 
 const signOut = async () => {
+  const API = axiosClient()
   const { data } = await API.get('/users/signout')
   return data
 }
 
 const signUp = async ({ email, password }) => {
+  const API = axiosClient()
   const { data } = await API.post('/users/signup', {
     email,
     password,
@@ -21,6 +20,7 @@ const signUp = async ({ email, password }) => {
 }
 
 const signIn = async ({ email, password }) => {
+  const API = axiosClient()
   const { data } = await API.post('/users/signin', {
     email,
     password,
@@ -28,7 +28,6 @@ const signIn = async ({ email, password }) => {
   return data
 }
 
-export const useCurrentUser = () => useQuery('user', getCurrentUser)
 export const useSignOut = () => useQuery('signout', signOut)
 export const useSignUp = () => {
   const toast = useToast()
@@ -41,6 +40,7 @@ export const useSignUp = () => {
         duration: 9000,
         isClosable: true,
       })
+      Router.push('/')
     },
     onError: error => {
       toast({
@@ -66,6 +66,7 @@ export const useSignIn = () => {
         duration: 9000,
         isClosable: true,
       })
+      Router.push('/')
     },
     onError: error => {
       toast({

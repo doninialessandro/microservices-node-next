@@ -1,16 +1,25 @@
-import { Hero, Header } from '../components'
+import axiosClient from '../utils/api'
+import { Hero } from '../components'
 
-const Index = () => (
-  <>
-    <Header />
+const Index = props => {
+  const { currentUser } = props
+  return (
     <Hero
-      title=""
-      subtitle=""
+      title="Welcome !!!"
+      subtitle={`Hi ${currentUser.email}! you are in the right place to find to the event of your dreams`}
       ctaText="Source code"
       ctaLink=""
+      image="/images/party.svg"
       disclaimer="Illustrative purposes only"
     />
-  </>
-)
+  )
+}
+
+Index.getInitialProps = async ({ req }) => {
+  const API = axiosClient(req)
+  const { data } = await API.get('/users/currentuser')
+
+  return data
+}
 
 export default Index

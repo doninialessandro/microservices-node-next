@@ -1,7 +1,9 @@
 // Data display
 export { default as DarkModeSwitch } from './dataDisplay/DarkModeSwitch'
 export { default as LaodingStatus } from './dataDisplay/LaodingStatus'
-export { default as Credentials } from './dataDisplay/Credentials'
+
+// Data Container
+export { default as Credentials } from './dataContainer/Credentials'
 
 // Layout
 export { default as Main } from './layout/Main'
