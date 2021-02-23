@@ -1,4 +1,5 @@
 import { FaGithub } from 'react-icons/fa'
+import { IoMdLogIn } from 'react-icons/io'
 
 import {
   Box,
@@ -11,7 +12,15 @@ import {
   Image,
 } from '@chakra-ui/react'
 
-const Hero = ({ title, subtitle, image, ctaLink, ctaText, disclaimer }) => (
+const Hero = ({
+  title,
+  subtitle,
+  image,
+  ctaLink,
+  isExternal,
+  ctaText,
+  disclaimer,
+}) => (
   <Flex
     align="center"
     justify={{ base: 'center', md: 'space-around', xl: 'space-between' }}
@@ -49,10 +58,16 @@ const Hero = ({ title, subtitle, image, ctaLink, ctaText, disclaimer }) => (
         {subtitle}
       </Heading>
       {ctaText && (
-        <Link href={ctaLink} isExternal>
-          <Button borderRadius="8px" py="4" px="4" lineHeight="1" size="md">
+        <Link href={ctaLink} isExternal={isExternal}>
+          <Button
+            borderRadius="8px"
+            py="4"
+            px="4"
+            lineHeight="1"
+            size="md"
+            rightIcon={isExternal ? <FaGithub /> : <IoMdLogIn />}
+          >
             {ctaText}{' '}
-            <FaGithub style={{ marginLeft: '8px', marginTop: '1px' }} />
           </Button>
         </Link>
       )}
@@ -78,6 +93,7 @@ Hero.defaultProps = {
   image: '',
   ctaText: '',
   ctaLink: '',
+  isExternal: true,
   disclaimer: '',
 }
 

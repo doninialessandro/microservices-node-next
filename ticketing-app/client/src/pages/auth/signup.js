@@ -1,7 +1,7 @@
 import { Credentials } from '../../components'
 
-const Signin = () => (
+const Signup = () => (
   <Credentials type="signup" title="Sign Up" buttonTitle="Sign Up" />
 )
 
-export default Signin
+export default Signup

@@ -153,11 +153,11 @@ const Credentials = props => {
           opacity="0.6"
           mb={5}
         >
-          {type === 'signin' ? 'New user' : 'Do you already have an account'}?{' '}
+          {type === 'signin' ? 'No account' : 'Already have an account'}?{' '}
           <Link href={type === 'signin' ? '/auth/signup' : '/auth/signin'}>
             <b>
               <ChakraLink color="orange">
-                {type === 'signin' ? 'Sign Up' : 'Sign In'}
+                {type === 'signin' ? 'Create one' : 'Sign in'}
               </ChakraLink>
             </b>
           </Link>

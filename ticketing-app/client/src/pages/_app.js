@@ -8,7 +8,7 @@ import theme from '../styles/theme'
 
 const queryClient = new QueryClient()
 
-const TicketingApp = ({ Component, pageProps }) => (
+const TicketingApp = ({ Component, pageProps, currentUser }) => (
   <ChakraProvider resetCSS theme={theme}>
     <ColorModeProvider
       options={{
@@ -18,7 +18,7 @@ const TicketingApp = ({ Component, pageProps }) => (
       <QueryClientProvider client={queryClient}>
         <Container>
           <Main>
-            <Header />
+            <Header currentUser={currentUser?.email} />
             <Component {...pageProps} />
           </Main>
         </Container>
@@ -26,7 +26,6 @@ const TicketingApp = ({ Component, pageProps }) => (
     </ColorModeProvider>
   </ChakraProvider>
 )
-
 TicketingApp.getInitialProps = async appContext => {
   const API = axiosClient(appContext.ctx.req)
   const { data } = await API.get('/users/currentuser')
